@@ -22,13 +22,13 @@ class NetworkDataFetcher: DataFetcher {
     //MARK: - decodeJSON
     func fetchData<T: Decodable>(url: String, response: @escaping (T?) -> Void) {
        
-        networking.request(urlString: url) { data, error in
+        networking.request(urlString: url) { [weak self] data, error in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
                 response(nil)
             }
 
-            guard let decoded = self.decodeJSON(type: T.self, from: data) else { return }
+            guard let decoded = self?.decodeJSON(type: T.self, from: data) else { return }
             response(decoded)
         }
     }

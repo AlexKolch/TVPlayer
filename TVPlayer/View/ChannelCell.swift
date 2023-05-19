@@ -54,14 +54,13 @@ class ChannelCell: UICollectionViewCell {
         contentView.addSubviews(cellImageView, cellTitleLabel, cellDescriptionLabel, activityIndicator)
         favoriteButton()
         setConstraints()
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func favoriteButton() {
+    func favoriteButton() {
         let filledStar = #imageLiteral(resourceName: "filledStar")
         let highlighterStar = #imageLiteral(resourceName: "highlightedStar")
         let button = UIButton()
@@ -71,6 +70,9 @@ class ChannelCell: UICollectionViewCell {
 
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
 
+        contentView.addSubview(button)
+        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
         button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
     }
@@ -79,11 +81,17 @@ class ChannelCell: UICollectionViewCell {
         print("Tap Button")
     }
 
+
+
 //    func configure(data: CellTVProtocol) {
 //        cellImageView.set(imageUrl: data.imageURL)
 //        cellTitleLabel.text = data.title
 //        cellDescriptionLabel.text = data.description
 //    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = 10
+    }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([

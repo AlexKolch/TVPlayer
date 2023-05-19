@@ -22,6 +22,9 @@
 		FCA8F18D2A16624700DBA91B /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F18C2A16624700DBA91B /* ChannelCell.swift */; };
 		FCA8F18F2A1663D400DBA91B /* WebImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F18E2A1663D400DBA91B /* WebImageManager.swift */; };
 		FCA8F1922A16737800DBA91B /* Extension UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1912A16737700DBA91B /* Extension UIView.swift */; };
+		FCA8F1962A17967B00DBA91B /* ListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1952A17967B00DBA91B /* ListCollectionView.swift */; };
+		FCA8F1982A179A9C00DBA91B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1972A179A9C00DBA91B /* HeaderView.swift */; };
+		FCA8F19A2A17F26C00DBA91B /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1992A17F26C00DBA91B /* Welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		FCA8F18C2A16624700DBA91B /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		FCA8F18E2A1663D400DBA91B /* WebImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageManager.swift; sourceTree = "<group>"; };
 		FCA8F1912A16737700DBA91B /* Extension UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIView.swift"; sourceTree = "<group>"; };
+		FCA8F1952A17967B00DBA91B /* ListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionView.swift; sourceTree = "<group>"; };
+		FCA8F1972A179A9C00DBA91B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FCA8F1992A17F26C00DBA91B /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA8F17D2A161BB600DBA91B /* Channel.swift */,
+				FCA8F1992A17F26C00DBA91B /* Welcome.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,7 +144,9 @@
 		FCA8F1932A168AE000DBA91B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FCA8F1952A17967B00DBA91B /* ListCollectionView.swift */,
 				FCA8F18C2A16624700DBA91B /* ChannelCell.swift */,
+				FCA8F1972A179A9C00DBA91B /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,11 +233,14 @@
 				FCA8F16E2A160D5C00DBA91B /* TVPlayer.xcdatamodeld in Sources */,
 				FCA8F18D2A16624700DBA91B /* ChannelCell.swift in Sources */,
 				FCA8F1682A160D5C00DBA91B /* MainViewController.swift in Sources */,
+				FCA8F19A2A17F26C00DBA91B /* Welcome.swift in Sources */,
 				FCA8F1882A164AD700DBA91B /* CellTV.swift in Sources */,
 				FCA8F1642A160D5C00DBA91B /* AppDelegate.swift in Sources */,
 				FCA8F1662A160D5C00DBA91B /* SceneDelegate.swift in Sources */,
 				FCA8F18F2A1663D400DBA91B /* WebImageManager.swift in Sources */,
+				FCA8F1962A17967B00DBA91B /* ListCollectionView.swift in Sources */,
 				FCA8F1802A1627A900DBA91B /* NetworkService.swift in Sources */,
+				FCA8F1982A179A9C00DBA91B /* HeaderView.swift in Sources */,
 				FCA8F17E2A161BB600DBA91B /* Channel.swift in Sources */,
 				FCA8F1862A1649ED00DBA91B /* ChannelModel.swift in Sources */,
 				FCA8F1842A1630A700DBA91B /* DataFetcherService.swift in Sources */,

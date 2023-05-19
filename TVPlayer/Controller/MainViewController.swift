@@ -9,57 +9,41 @@ import UIKit
 
 class MainViewController: UIViewController {
     var dataFetcherService = DataFetcherService()
+    let collectionView = ListCollectionView()
   
-    private var channels = [Channel]()
-
-    private var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 8
-        layout.minimumLineSpacing = 8
-       // layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 32)/3, height: 100)
-        layout.scrollDirection = .vertical
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .black
-        collectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        collectionView.register(ChannelCell.self, forCellWithReuseIdentifier: ChannelCell.identifier)
-        return collectionView
-    }()
+//    private var channels = [Channel]()
+    private var channels = [Welcome]()
+//    var itemsChannelArray: [Channel] = {
+//        var channel = Channel()
+//        return channel
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemPink
-        dataFetcherService.fetchChannels { response in
-            print(response?.channels ?? "")
-            guard let response = response else { return }
-            self.channels = response.channels
-            print(self.channels)
-        }
-        view.addSubview(collectionView)
-
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
-      //  fetchData()
-    }
-//    func fetchData() {
-//        NetworkDataFetcher.fetchData(url: urlString) { channel in
-//
-//            self.channels = channel
+//        dataFetcherService.fetchChannels { response in
+//            print(response?.channels ?? "")
+//            guard let response = response else { return }
+//            self.channels.append(response)
+//            self.channels = response.channels
 //        }
-//    }
+        self.view.addSubview(collectionView)
+        setConstraints()
+    }
+
 //    private func configureCell(cell: ChannelCell, for indexPath: IndexPath) {
 //        let channel = channels[indexPath.row]
-//        cell.cellImageView.set(imageUrl: urlString)
-//        cell.cellTitleLabel.text = channel.nameRu
-//
+//        if let channel = channel as? Channel {
+//            cell.cellImageView.set(imageUrl: dataFetcherService.urlAPI)
+//            cell.cellTitleLabel.text = channel.nameRu
+//            cell.cellDescriptionLabel.text = channel.current.title
+//        }
 //    }
 
 }
 
 extension MainViewController {
     private func setConstraints() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -68,34 +52,3 @@ extension MainViewController {
         ])
     }
 }
-// MARK: - DataSource Delegate
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0: return 1
-        default: return channels.count
-       // default: return channels.cells.count
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellData = channels[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.identifier, for: indexPath)
-        guard let cell = cell as? ChannelCell else {return UICollectionViewCell()}
-       // configureCell(cell: cell, for: indexPath)
-        cell.cellTitleLabel.text = cellData.nameRu
-        cell.cellImageView.set(imageUrl: cellData.image)
-       // cell.configure(data: cellData)
-        return cell
-    }
-
-}
-
-// MARK: - DelegateFlowLayout
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-
-}
-

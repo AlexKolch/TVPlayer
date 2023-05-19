@@ -7,14 +7,9 @@
 
 import Foundation
 
-struct Welcome: Decodable {
-//    static func == (lhs: Welcome, rhs: Welcome) -> Bool {
-//        guard lhs.hashValue == rhs.hashValue else {return false}
-//        return true
-//    }
-
-    let channels: [Channel]
-}
+//struct Welcome: Decodable {
+//    let channels: [Channel]
+//}
 
 struct Channel: Decodable {
     let nameRu: String
