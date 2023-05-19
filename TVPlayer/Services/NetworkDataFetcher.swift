@@ -39,7 +39,6 @@ class NetworkDataFetcher: DataFetcher {
         guard let data = data else { return nil }
         do {
             let objects = try decoder.decode(type.self, from: data)
-            print(objects)
             return objects
         } catch let jsonError {
             print("Failed to decode JSON", jsonError)
