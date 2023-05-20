@@ -10,28 +10,20 @@ import UIKit
 class ListCollectionView: UICollectionView {
     var dataFetcherService = DataFetcherService()
 
-    private var channels = [Welcome]()
     var channelResponse: Welcome? = nil
-//    var color: [UIColor] = [.brown, .systemPink, .white, .black]
 
-//    var itemsChannelArray: [Channel] = {
-//        var channel = Channel()
-//    }
 
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        //layout.minimumLineSpacing = 10
-        //layout.minimumInteritemSpacing = 8
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 
-        //layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
 
         super.init(frame: .zero, collectionViewLayout: layout)
-        register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reusableID)
+        //register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reusableID)
         register(ChannelCell.self, forCellWithReuseIdentifier: ChannelCell.identifier)
 
-
-        backgroundColor = .systemGray
+        backgroundColor = .black
         contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8) ///внутренний отступ layout
         fetchData()
         dataSource = self
@@ -44,29 +36,22 @@ class ListCollectionView: UICollectionView {
 
     func fetchData() {
         dataFetcherService.fetchChannels { response in
-            response?.channels.map({ channel in
-                print(channel.nameRu, "WOW!!!!")
-            })
             guard let response = response else { return }
+
             self.channelResponse = response
             self.reloadData()
-//            self.channels.append(response)
-
         }
     }
 
     private func configureCell(cell: ChannelCell, for indexPath: IndexPath) -> ChannelCell {
-        let channel = channelResponse?.channels[indexPath.row]
-        //        let channel = channels[indexPath.row]
+        guard let channel = channelResponse?.channels[indexPath.row] else { return ChannelCell()}
 
-        cell.cellImageView.set(imageUrl: dataFetcherService.urlAPI)
-        cell.cellTitleLabel.text = channel?.nameRu
-        cell.cellDescriptionLabel.text = channel?.current.title
+        cell.cellImageView.set(imageUrl: channel.image)
+        cell.cellTitleLabel.text = channel.nameRu
+        cell.cellDescriptionLabel.text = channel.current.title
 
         return cell
     }
-
-
 }
 
 extension ListCollectionView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -76,21 +61,20 @@ extension ListCollectionView: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         channelResponse?.channels.count ?? 0
-//        channels.count
-//        color.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCell.identifier,
+                                                      for: indexPath)
         guard var cell = cell as? ChannelCell else { return UICollectionViewCell() }
-       // cell.backgroundColor = color[indexPath.item]
+
         cell = configureCell(cell: cell, for: indexPath)
         
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (UIScreen.main.bounds.width - 48), height: 100)
+        CGSize(width: UIScreen.main.bounds.width - 24, height: 100)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -102,12 +86,12 @@ extension ListCollectionView: UICollectionViewDataSource, UICollectionViewDelega
         cell.favoriteButton()
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.reusableID, for: indexPath)
-        //   header.backgroundColor = .darkGray
-        return header
-    }
-///Размер Header
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.reusableID, for: indexPath)
+//           header.backgroundColor = .darkGray
+//        return header
+//    }
+/////Размер Header
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //        CGSize(width: 0, height: 200)
 //    }

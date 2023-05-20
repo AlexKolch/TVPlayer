@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         self.view.addSubview(collectionView)
         setConstraints()
     }
-
+   
 //    private func configureCell(cell: ChannelCell, for indexPath: IndexPath) {
 //        let channel = channels[indexPath.row]
 //        if let channel = channel as? Channel {
