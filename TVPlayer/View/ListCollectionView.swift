@@ -20,10 +20,10 @@ class ListCollectionView: UICollectionView {
 
 
         super.init(frame: .zero, collectionViewLayout: layout)
-        //register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reusableID)
+       // register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reusableID)
         register(ChannelCell.self, forCellWithReuseIdentifier: ChannelCell.identifier)
 
-        backgroundColor = .black
+        backgroundColor = #colorLiteral(red: 0.1164590665, green: 0.1260927762, blue: 0.1400881635, alpha: 1)
         contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8) ///внутренний отступ layout
         fetchData()
         dataSource = self

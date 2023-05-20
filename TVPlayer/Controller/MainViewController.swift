@@ -10,35 +10,66 @@ import UIKit
 class MainViewController: UIViewController {
     var dataFetcherService = DataFetcherService()
     let collectionView = ListCollectionView()
-  
-//    private var channels = [Channel]()
-    private var channels = [Welcome]()
-//    var itemsChannelArray: [Channel] = {
-//        var channel = Channel()
-//        return channel
-//    }()
+    let searchController = UISearchController(searchResultsController: nil)
+
+    //private var channels = [Welcome]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        dataFetcherService.fetchChannels { response in
-//            print(response?.channels ?? "")
-//            guard let response = response else { return }
-//            self.channels.append(response)
-//            self.channels = response.channels
-//        }
         self.view.addSubview(collectionView)
+
+        setupSearchBar()
+        setupViews()
+//        setupNavigationBar()
+
         setConstraints()
     }
-   
-//    private func configureCell(cell: ChannelCell, for indexPath: IndexPath) {
-//        let channel = channels[indexPath.row]
-//        if let channel = channel as? Channel {
-//            cell.cellImageView.set(imageUrl: dataFetcherService.urlAPI)
-//            cell.cellTitleLabel.text = channel.nameRu
-//            cell.cellDescriptionLabel.text = channel.current.title
+
+    private func setupViews() {
+        setupNavigationBar()
+
+        let allButton = createCustomButton(title: "Все", selector: #selector(allButtonTapped))
+        let favoriteButton = createCustomButton(title: "Избранные", selector: #selector(favoriteButtonTapped))
+
+        navigationItem.leftBarButtonItems = [allButton, favoriteButton]
+    }
+
+    @objc private func allButtonTapped() {
+        print("all Button Tapped")
+    }
+
+    @objc private func favoriteButtonTapped() {
+        print("favorite Button Tapped")
+    }
+
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Напишите название телеканала"
+        searchController.searchBar.tintColor = .lightGray
+      //  searchController.searchBar.backgroundColor = .lightGray
+       // searchController.searchBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        searchController.searchBar.barTintColor = .red
+
+    }
+
+//    private func setupNavigationBar() {
+//        if #available(iOS 13.0, *) {
+//            let navBarAppearance = UINavigationBarAppearance()
+//            navBarAppearance.backgroundColor = #colorLiteral(red: 0.2112068534, green: 0.2286782756, blue: 0.2540599123, alpha: 1)
+//
+//            navigationController?.navigationBar.standardAppearance = navBarAppearance
+//            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+//
+//            navigationController?.navigationBar.prefersLargeTitles = false
+//            navigationController?.navigationBar.tintColor = .white
+//
+////            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+//        } else {
+//            navigationController?.navigationBar.tintColor = .darkGray
 //        }
 //    }
-
 }
 
 extension MainViewController {
@@ -50,5 +81,11 @@ extension MainViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+
     }
 }

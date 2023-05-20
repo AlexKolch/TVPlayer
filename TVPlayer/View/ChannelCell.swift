@@ -44,7 +44,9 @@ class ChannelCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .darkGray
+        contentView.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.2274509804, blue: 0.2549019608, alpha: 1)
+        contentView.layer.cornerRadius = 20
+
         contentView.addSubviews(cellImageView, cellTitleLabel, cellDescriptionLabel, activityIndicator)
         favoriteButton()
         setConstraints()
@@ -54,18 +56,20 @@ class ChannelCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layer.cornerRadius = 20
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        self.layer.cornerRadius = 20
+//    }
 
     func favoriteButton() {
         let filledStar = #imageLiteral(resourceName: "filledStar")
         let highlighterStar = #imageLiteral(resourceName: "highlightedStar")
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(filledStar, for: .normal)
+
+        button.setImage(filledStar.withRenderingMode(.alwaysTemplate), for: .normal)
         button.setImage(highlighterStar, for: .selected)
+        button.tintColor = .lightGray
 
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
 

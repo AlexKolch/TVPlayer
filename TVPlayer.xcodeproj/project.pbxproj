@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC536F1C2A190BC600C7EE51 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */; };
 		FCA8F1642A160D5C00DBA91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1632A160D5C00DBA91B /* AppDelegate.swift */; };
 		FCA8F1662A160D5C00DBA91B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1652A160D5C00DBA91B /* SceneDelegate.swift */; };
 		FCA8F1682A160D5C00DBA91B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1672A160D5C00DBA91B /* MainViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		FCA8F1602A160D5C00DBA91B /* TVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA8F1632A160D5C00DBA91B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA8F1652A160D5C00DBA91B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA8F1912A16737700DBA91B /* Extension UIView.swift */,
+				FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */,
 			);
 			path = "Extension project";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				FCA8F1682A160D5C00DBA91B /* MainViewController.swift in Sources */,
 				FCA8F19A2A17F26C00DBA91B /* Welcome.swift in Sources */,
 				FCA8F1882A164AD700DBA91B /* CellTV.swift in Sources */,
+				FC536F1C2A190BC600C7EE51 /* Extension + UIViewController.swift in Sources */,
 				FCA8F1642A160D5C00DBA91B /* AppDelegate.swift in Sources */,
 				FCA8F1662A160D5C00DBA91B /* SceneDelegate.swift in Sources */,
 				FCA8F18F2A1663D400DBA91B /* WebImageManager.swift in Sources */,

@@ -11,7 +11,6 @@ class HeaderView: UICollectionReusableView {
     static let reusableID = "HeaderID"
 
     var header: UIView!
-    let searchController = UISearchController(searchResultsController: nil)
 
     override init(frame: CGRect) {
         header = UIView(frame: .zero)
@@ -23,8 +22,5 @@ class HeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupSearchBar() {
-       
-    }
 
 }
