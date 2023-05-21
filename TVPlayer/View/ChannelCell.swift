@@ -11,22 +11,8 @@ class ChannelCell: UICollectionViewCell {
     static let identifier = "CellID"
     private let isSelect = "Select"
 
-    var favoriteChannels: [UIButton] = []
-    var nonFavoriteChannels: [UIButton] = []
-
-//    var channels: [UIButton] {
-//        get {
-//            if let array = UserDefaults.standard.array(forKey: "favoriteChannelsKey") as? [UIButton] {
-//                return array
-//            } else {
-//                return []
-//            }
-//        }
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: "favoriteChannelsKey")
-//            UserDefaults.standard.synchronize()
-//        }
-//    }
+//    var favoriteChannels: [UIButton] = []
+//    var nonFavoriteChannels: [UIButton] = []
 
      var cellImageView: WebImageManager = {
         let imageView = WebImageManager()
@@ -66,13 +52,13 @@ class ChannelCell: UICollectionViewCell {
 
         button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
 
-        if button.isSelected {
-            favoriteChannels.append(button)
-            print(favoriteChannels.count)
-        } else {
-            nonFavoriteChannels.append(button)
-            print(nonFavoriteChannels.count)
-        }
+//        if button.isSelected {
+//            favoriteChannels.append(button)
+//            print(favoriteChannels.count)
+//        } else {
+//            nonFavoriteChannels.append(button)
+//            print(nonFavoriteChannels.count)
+//        }
 
         return button
     }()
@@ -83,7 +69,7 @@ class ChannelCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 20
         contentView.addSubviews(cellImageView, cellTitleLabel, cellDescriptionLabel, favoriteButton)
 
-        addFavoriteButton()
+       // addFavoriteButton()
         setConstraints()
     }
 
@@ -99,10 +85,10 @@ class ChannelCell: UICollectionViewCell {
         UserDefaults.standard.set(button.isSelected, forKey: isSelect)
     }
 
-    private func addFavoriteButton() {
-        favoriteChannels.forEach({contentView.addSubview($0)})
-        nonFavoriteChannels.forEach({contentView.addSubview($0)})
-    }
+//    private func addFavoriteButton() {
+//        favoriteChannels.forEach({contentView.addSubview($0)})
+//        nonFavoriteChannels.forEach({contentView.addSubview($0)})
+//    }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([

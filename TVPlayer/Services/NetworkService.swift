@@ -12,7 +12,6 @@ protocol Networking {
 }
 
 final class NetworkService: Networking {
-   // static let shared: NetworkService = .init()
 
     func request(urlString: String, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: urlString) else { return }

@@ -7,10 +7,6 @@
 
 import Foundation
 
-//struct Welcome: Decodable {
-//    let channels: [Channel]
-//}
-
 struct Channel: Decodable {
     let nameRu: String
     let image: String

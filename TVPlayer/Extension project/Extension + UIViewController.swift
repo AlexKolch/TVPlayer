@@ -23,32 +23,5 @@ extension UIViewController {
             navigationController?.navigationBar.tintColor = .darkGray
         }
     }
-
-//    func createCustomButton(title: String, selector: Selector) -> UIBarButtonItem {
-//
-//        let button = UIButton(type: .system)
-//        button.setTitle(title, for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//
-//        button.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
-//        button.addTarget(self, action: selector, for: .touchUpInside)
-//        view.addSubview(button)
-//
-//        let menuBarItem = UIBarButtonItem(customView: button)
-//        return menuBarItem
-//    }
 }
 
-//extension UICollectionReusableView {
-//    func createCustomButton(title: String, selector: Selector) -> UIButton {
-//
-//            let button = UIButton(type: .system)
-//            button.setTitle(title, for: .normal)
-//            button.setTitleColor(.white, for: .normal)
-//
-//            button.addTarget(self, action: selector, for: .touchUpInside)
-//            addSubview(button)
-//
-//            return button
-//        }
-//}

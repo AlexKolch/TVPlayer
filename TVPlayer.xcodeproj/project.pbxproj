@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC536F1C2A190BC600C7EE51 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */; };
-		FC536F1E2A1A1DC100C7EE51 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1D2A1A1DC100C7EE51 /* FavoriteButton.swift */; };
 		FC536F212A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1F2A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift */; };
 		FC536F222A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F202A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift */; };
 		FCA8F1642A160D5C00DBA91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1632A160D5C00DBA91B /* AppDelegate.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
-		FC536F1D2A1A1DC100C7EE51 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		FC536F1F2A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteChannel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FC536F202A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteChannel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FCA8F1602A160D5C00DBA91B /* TVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,8 +118,8 @@
 		FCA8F17C2A161B3000DBA91B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FCA8F17D2A161BB600DBA91B /* Channel.swift */,
 				FCA8F1992A17F26C00DBA91B /* Welcome.swift */,
+				FCA8F17D2A161BB600DBA91B /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,7 +146,6 @@
 			children = (
 				FCA8F1952A17967B00DBA91B /* ListCollectionView.swift */,
 				FCA8F18C2A16624700DBA91B /* ChannelCell.swift */,
-				FC536F1D2A1A1DC100C7EE51 /* FavoriteButton.swift */,
 				FCA8F1972A179A9C00DBA91B /* HeaderView.swift */,
 			);
 			path = View;
@@ -226,7 +223,6 @@
 			files = (
 				FCA8F1822A162AF000DBA91B /* NetworkDataFetcher.swift in Sources */,
 				FCA8F18D2A16624700DBA91B /* ChannelCell.swift in Sources */,
-				FC536F1E2A1A1DC100C7EE51 /* FavoriteButton.swift in Sources */,
 				FCA8F1682A160D5C00DBA91B /* MainViewController.swift in Sources */,
 				FCA8F19A2A17F26C00DBA91B /* Welcome.swift in Sources */,
 				FC536F1C2A190BC600C7EE51 /* Extension + UIViewController.swift in Sources */,

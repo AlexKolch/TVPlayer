@@ -48,12 +48,6 @@ class ListCollectionView: UICollectionView {
         cell.cellTitleLabel.text = channel.nameRu
         cell.cellDescriptionLabel.text = channel.current.title
 
-        let select = cell.favoriteButton.isSelected ? cell.favoriteChannels[indexPath.item] : cell.nonFavoriteChannels[indexPath.item]
-
-        cell.favoriteButton = select
-
-//        cell.favoriteButton = cell.channels[indexPath.item]
-
         return cell
     }
 }

@@ -10,24 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     let collectionView = ListCollectionView()
-
     let searchController = UISearchController(searchResultsController: nil)
-
-
-//    var favoriteChannels: [UIButton] {
-//        get {
-//            if let array = UserDefaults.standard.array(forKey: "favoriteChannelsKey") as? [UIButton] {
-//               return array
-//            } else {
-//                return []
-//            }
-//        }
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: "favoriteChannelsKey")
-//            UserDefaults.standard.synchronize()
-//        }
-//    }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
