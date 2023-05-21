@@ -18,9 +18,8 @@ class ListCollectionView: UICollectionView {
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 
-
         super.init(frame: .zero, collectionViewLayout: layout)
-       // register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reusableID)
+        register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reusableID)
         register(ChannelCell.self, forCellWithReuseIdentifier: ChannelCell.identifier)
 
         backgroundColor = #colorLiteral(red: 0.1164590665, green: 0.1260927762, blue: 0.1400881635, alpha: 1)
@@ -37,7 +36,6 @@ class ListCollectionView: UICollectionView {
     func fetchData() {
         dataFetcherService.fetchChannels { response in
             guard let response = response else { return }
-
             self.channelResponse = response
             self.reloadData()
         }
@@ -50,14 +48,17 @@ class ListCollectionView: UICollectionView {
         cell.cellTitleLabel.text = channel.nameRu
         cell.cellDescriptionLabel.text = channel.current.title
 
+        let select = cell.favoriteButton.isSelected ? cell.favoriteChannels[indexPath.item] : cell.nonFavoriteChannels[indexPath.item]
+
+        cell.favoriteButton = select
+
+//        cell.favoriteButton = cell.channels[indexPath.item]
+
         return cell
     }
 }
 
 extension ListCollectionView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        2
-//    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         channelResponse?.channels.count ?? 0
@@ -81,18 +82,23 @@ extension ListCollectionView: UICollectionViewDataSource, UICollectionViewDelega
         10
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! ChannelCell
-        cell.favoriteButton()
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: -60, left: 1, bottom: 1, right: 1)
     }
 
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.reusableID, for: indexPath)
-//           header.backgroundColor = .darkGray
-//        return header
-//    }
-/////Размер Header
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        CGSize(width: 0, height: 200)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ChannelCell
+      
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.reusableID, for: indexPath) as! HeaderView
+
+        header.configure()
+        return header
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        CGSize(width: frame.size.width, height: 120)
+    }
 }

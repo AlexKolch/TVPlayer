@@ -9,6 +9,24 @@ import UIKit
 
 class ChannelCell: UICollectionViewCell {
     static let identifier = "CellID"
+    private let isSelect = "Select"
+
+    lazy var favoriteChannels: [UIButton] = []
+    lazy var nonFavoriteChannels: [UIButton] = []
+
+//    var channels: [UIButton] {
+//        get {
+//            if let array = UserDefaults.standard.array(forKey: "favoriteChannelsKey") as? [UIButton] {
+//                return array
+//            } else {
+//                return []
+//            }
+//        }
+//        set {
+//            UserDefaults.standard.set(newValue, forKey: "favoriteChannelsKey")
+//            UserDefaults.standard.synchronize()
+//        }
+//    }
 
      var cellImageView: WebImageManager = {
         let imageView = WebImageManager()
@@ -16,13 +34,6 @@ class ChannelCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
-     var activityIndicator: UIActivityIndicatorView = {
-       let activityIndicatorView = UIActivityIndicatorView()
-       activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-       activityIndicatorView.hidesWhenStopped = true
-       return activityIndicatorView
-   }()
 
      var cellTitleLabel: UILabel = {
         let label = UILabel()
@@ -42,26 +53,7 @@ class ChannelCell: UICollectionViewCell {
         return label
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.2274509804, blue: 0.2549019608, alpha: 1)
-        contentView.layer.cornerRadius = 20
-
-        contentView.addSubviews(cellImageView, cellTitleLabel, cellDescriptionLabel, activityIndicator)
-        favoriteButton()
-        setConstraints()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        self.layer.cornerRadius = 20
-//    }
-
-    func favoriteButton() {
+    lazy var favoriteButton: UIButton = {
         let filledStar = #imageLiteral(resourceName: "filledStar")
         let highlighterStar = #imageLiteral(resourceName: "highlightedStar")
         let button = UIButton()
@@ -70,21 +62,47 @@ class ChannelCell: UICollectionViewCell {
         button.setImage(filledStar.withRenderingMode(.alwaysTemplate), for: .normal)
         button.setImage(highlighterStar, for: .selected)
         button.tintColor = .lightGray
+        button.isSelected = UserDefaults.standard.bool(forKey: isSelect)
 
-        button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
 
-        contentView.addSubview(button)
-        button.widthAnchor.constraint(equalToConstant: 28).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 28).isActive = true
-        button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25).isActive = true
+        if button.isSelected {
+            favoriteChannels.append(button)
+            print(favoriteChannels.count)
+        } else {
+            nonFavoriteChannels.append(button)
+            print(nonFavoriteChannels.count)
+        }
+
+        return button
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.2274509804, blue: 0.2549019608, alpha: 1)
+        contentView.layer.cornerRadius = 20
+        contentView.addSubviews(cellImageView, cellTitleLabel, cellDescriptionLabel, favoriteButton)
+
+      //  addFavoriteButton()
+        setConstraints()
     }
 
-    @objc func tapButton(button: UIButton) {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
+    @objc func favoriteButtonTapped(button: UIButton) {
         print("Tap Button")
-        button.isSelected = true
+
+        button.isSelected.toggle()
+        UserDefaults.standard.set(button.isSelected, forKey: isSelect)
     }
 
+//    private func addFavoriteButton() {
+//        favoriteChannels.forEach({contentView.addSubview($0)})
+//        nonFavoriteChannels.forEach({contentView.addSubview($0)})
+//    }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([
@@ -98,10 +116,11 @@ class ChannelCell: UICollectionViewCell {
 
             cellDescriptionLabel.topAnchor.constraint(equalTo: cellTitleLabel.bottomAnchor, constant: 8),
             cellDescriptionLabel.leadingAnchor.constraint(equalTo: cellTitleLabel.leadingAnchor),
-//            cellDescriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
 
-            activityIndicator.centerXAnchor.constraint(equalTo: cellImageView.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: cellImageView.centerYAnchor)
+            favoriteButton.widthAnchor.constraint(equalToConstant: 28),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 28),
+            favoriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25)
         ])
     }
 }
