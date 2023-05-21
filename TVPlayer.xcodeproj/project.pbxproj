@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		FC536F1C2A190BC600C7EE51 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */; };
+		FC536F1E2A1A1DC100C7EE51 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1D2A1A1DC100C7EE51 /* FavoriteButton.swift */; };
+		FC536F212A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F1F2A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift */; };
+		FC536F222A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC536F202A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift */; };
 		FCA8F1642A160D5C00DBA91B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1632A160D5C00DBA91B /* AppDelegate.swift */; };
 		FCA8F1662A160D5C00DBA91B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1652A160D5C00DBA91B /* SceneDelegate.swift */; };
 		FCA8F1682A160D5C00DBA91B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1672A160D5C00DBA91B /* MainViewController.swift */; };
-		FCA8F16E2A160D5C00DBA91B /* TVPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F16C2A160D5C00DBA91B /* TVPlayer.xcdatamodeld */; };
 		FCA8F1702A160D5C00DBA91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA8F16F2A160D5C00DBA91B /* Assets.xcassets */; };
 		FCA8F1732A160D5C00DBA91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA8F1712A160D5C00DBA91B /* LaunchScreen.storyboard */; };
 		FCA8F17E2A161BB600DBA91B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F17D2A161BB600DBA91B /* Channel.swift */; };
 		FCA8F1802A1627A900DBA91B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F17F2A1627A900DBA91B /* NetworkService.swift */; };
 		FCA8F1822A162AF000DBA91B /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1812A162AF000DBA91B /* NetworkDataFetcher.swift */; };
 		FCA8F1842A1630A700DBA91B /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1832A1630A700DBA91B /* DataFetcherService.swift */; };
-		FCA8F1862A1649ED00DBA91B /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1852A1649ED00DBA91B /* ChannelModel.swift */; };
-		FCA8F1882A164AD700DBA91B /* CellTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1872A164AD700DBA91B /* CellTV.swift */; };
 		FCA8F18D2A16624700DBA91B /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F18C2A16624700DBA91B /* ChannelCell.swift */; };
 		FCA8F18F2A1663D400DBA91B /* WebImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F18E2A1663D400DBA91B /* WebImageManager.swift */; };
 		FCA8F1922A16737800DBA91B /* Extension UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8F1912A16737700DBA91B /* Extension UIView.swift */; };
@@ -30,11 +30,13 @@
 
 /* Begin PBXFileReference section */
 		FC536F1B2A190BC600C7EE51 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		FC536F1D2A1A1DC100C7EE51 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		FC536F1F2A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteChannel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC536F202A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteChannel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FCA8F1602A160D5C00DBA91B /* TVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA8F1632A160D5C00DBA91B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA8F1652A160D5C00DBA91B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FCA8F1672A160D5C00DBA91B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		FCA8F16D2A160D5C00DBA91B /* TVPlayer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVPlayer.xcdatamodel; sourceTree = "<group>"; };
 		FCA8F16F2A160D5C00DBA91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA8F1722A160D5C00DBA91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCA8F1742A160D5C00DBA91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,8 +44,6 @@
 		FCA8F17F2A1627A900DBA91B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FCA8F1812A162AF000DBA91B /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		FCA8F1832A1630A700DBA91B /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
-		FCA8F1852A1649ED00DBA91B /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
-		FCA8F1872A164AD700DBA91B /* CellTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTV.swift; sourceTree = "<group>"; };
 		FCA8F18C2A16624700DBA91B /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		FCA8F18E2A1663D400DBA91B /* WebImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageManager.swift; sourceTree = "<group>"; };
 		FCA8F1912A16737700DBA91B /* Extension UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIView.swift"; sourceTree = "<group>"; };
@@ -66,6 +66,8 @@
 		FCA8F1572A160D5C00DBA91B = {
 			isa = PBXGroup;
 			children = (
+				FC536F1F2A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift */,
+				FC536F202A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift */,
 				FCA8F1622A160D5C00DBA91B /* TVPlayer */,
 				FCA8F1612A160D5C00DBA91B /* Products */,
 			);
@@ -84,15 +86,12 @@
 			children = (
 				FCA8F1902A16736400DBA91B /* Extension project */,
 				FCA8F17B2A161B1A00DBA91B /* Services */,
-				FCA8F1942A168DDA00DBA91B /* Model */,
 				FCA8F18B2A16531400DBA91B /* Controller */,
 				FCA8F1932A168AE000DBA91B /* View */,
 				FCA8F17A2A160E4200DBA91B /* App */,
-				FCA8F1872A164AD700DBA91B /* CellTV.swift */,
 				FCA8F16F2A160D5C00DBA91B /* Assets.xcassets */,
 				FCA8F1712A160D5C00DBA91B /* LaunchScreen.storyboard */,
 				FCA8F1742A160D5C00DBA91B /* Info.plist */,
-				FCA8F16C2A160D5C00DBA91B /* TVPlayer.xcdatamodeld */,
 			);
 			path = TVPlayer;
 			sourceTree = "<group>";
@@ -149,17 +148,10 @@
 			children = (
 				FCA8F1952A17967B00DBA91B /* ListCollectionView.swift */,
 				FCA8F18C2A16624700DBA91B /* ChannelCell.swift */,
+				FC536F1D2A1A1DC100C7EE51 /* FavoriteButton.swift */,
 				FCA8F1972A179A9C00DBA91B /* HeaderView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FCA8F1942A168DDA00DBA91B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FCA8F1852A1649ED00DBA91B /* ChannelModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,20 +225,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA8F1822A162AF000DBA91B /* NetworkDataFetcher.swift in Sources */,
-				FCA8F16E2A160D5C00DBA91B /* TVPlayer.xcdatamodeld in Sources */,
 				FCA8F18D2A16624700DBA91B /* ChannelCell.swift in Sources */,
+				FC536F1E2A1A1DC100C7EE51 /* FavoriteButton.swift in Sources */,
 				FCA8F1682A160D5C00DBA91B /* MainViewController.swift in Sources */,
 				FCA8F19A2A17F26C00DBA91B /* Welcome.swift in Sources */,
-				FCA8F1882A164AD700DBA91B /* CellTV.swift in Sources */,
 				FC536F1C2A190BC600C7EE51 /* Extension + UIViewController.swift in Sources */,
+				FC536F222A1A955F00C7EE51 /* FavoriteChannel+CoreDataProperties.swift in Sources */,
 				FCA8F1642A160D5C00DBA91B /* AppDelegate.swift in Sources */,
 				FCA8F1662A160D5C00DBA91B /* SceneDelegate.swift in Sources */,
+				FC536F212A1A955F00C7EE51 /* FavoriteChannel+CoreDataClass.swift in Sources */,
 				FCA8F18F2A1663D400DBA91B /* WebImageManager.swift in Sources */,
 				FCA8F1962A17967B00DBA91B /* ListCollectionView.swift in Sources */,
 				FCA8F1802A1627A900DBA91B /* NetworkService.swift in Sources */,
 				FCA8F1982A179A9C00DBA91B /* HeaderView.swift in Sources */,
 				FCA8F17E2A161BB600DBA91B /* Channel.swift in Sources */,
-				FCA8F1862A1649ED00DBA91B /* ChannelModel.swift in Sources */,
 				FCA8F1842A1630A700DBA91B /* DataFetcherService.swift in Sources */,
 				FCA8F1922A16737800DBA91B /* Extension UIView.swift in Sources */,
 			);
@@ -392,6 +384,8 @@
 				INFOPLIST_FILE = TVPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -423,6 +417,8 @@
 				INFOPLIST_FILE = TVPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -464,19 +460,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FCA8F16C2A160D5C00DBA91B /* TVPlayer.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FCA8F16D2A160D5C00DBA91B /* TVPlayer.xcdatamodel */,
-			);
-			currentVersion = FCA8F16D2A160D5C00DBA91B /* TVPlayer.xcdatamodel */;
-			path = TVPlayer.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FCA8F1582A160D5C00DBA91B /* Project object */;
 }

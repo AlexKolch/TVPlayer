@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-     func setupNavigationBar() {
+    func setupNavigationBar() {
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.backgroundColor = #colorLiteral(red: 0.2112068534, green: 0.2286782756, blue: 0.2540599123, alpha: 1)
@@ -19,23 +19,36 @@ extension UIViewController {
             navigationController?.navigationBar.prefersLargeTitles = false
             navigationController?.navigationBar.tintColor = .white
 
-//            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         } else {
             navigationController?.navigationBar.tintColor = .darkGray
         }
     }
 
-    func createCustomButton(title: String, selector: Selector) -> UIBarButtonItem {
-
-        let button = UIButton(type: .system)
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
-        button.addTarget(self, action: selector, for: .touchUpInside)
-        view.addSubview(button)
-
-        let menuBarItem = UIBarButtonItem(customView: button)
-        return menuBarItem
-    }
+//    func createCustomButton(title: String, selector: Selector) -> UIBarButtonItem {
+//
+//        let button = UIButton(type: .system)
+//        button.setTitle(title, for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//
+//        button.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
+//        button.addTarget(self, action: selector, for: .touchUpInside)
+//        view.addSubview(button)
+//
+//        let menuBarItem = UIBarButtonItem(customView: button)
+//        return menuBarItem
+//    }
 }
+
+//extension UICollectionReusableView {
+//    func createCustomButton(title: String, selector: Selector) -> UIButton {
+//
+//            let button = UIButton(type: .system)
+//            button.setTitle(title, for: .normal)
+//            button.setTitleColor(.white, for: .normal)
+//
+//            button.addTarget(self, action: selector, for: .touchUpInside)
+//            addSubview(button)
+//
+//            return button
+//        }
+//}
