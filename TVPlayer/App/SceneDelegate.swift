@@ -45,8 +45,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     private func makeRootViewController() -> UIViewController {
         let mainVC = MainViewController()
-        let navBar = UINavigationController(rootViewController: mainVC)
-        return navBar
+        let navBarVC = UINavigationController(rootViewController: mainVC)
+        return navBarVC
     }
 }
 
